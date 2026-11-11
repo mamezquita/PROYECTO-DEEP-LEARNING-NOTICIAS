@@ -47,6 +47,8 @@ artículo no explicita:
 | `fake_news_es_baseline.ipynb` | Versión refactorizada y unificada de los dos anteriores (ver "Diferencias entre los tres notebooks" abajo). |
 | `auditoria_construccion_corpus.ipynb` | **Notebook de auditoría**: todo el código que se usó para ampliar el corpus de 793 a 3.259 filas, en el orden en que se ejecutó. No entrena ningún modelo — es un registro reproducible de cómo se construyeron los datos. |
 | `finetuning_bayesiano_colombia.ipynb` | Ajuste fino de RoBERTa-BNE sobre el corpus colombiano, reemplazando el ajuste manual de hiperparámetros del artículo por una búsqueda bayesiana con Keras Tuner. Pensado para correrse de punta a punta en Colab con GPU. Ver detalle abajo. |
+| `auditoria_interpretabilidad_modelo.ipynb` | **Auditoría e interpretación del modelo final** (no entrena). Entrada única: la carpeta con `tf_model.h5` (`salida_bayesiana/mejor_modelo/`). Tres secciones: (1) auditoría temporal (fechas anacrónicas, funcionarios posteriores al corte), (2) qué aprendió como "falso" (otras fuentes, cifras absurdas, cargos incoherentes, sátira vs. hechos reales extravagantes, mapas de atención), (3) comparación con el Cuadro 7 del artículo. Raspa sus datos dentro del notebook desde un manifiesto fijo de URLs con huellas y guarda una instantánea, y verifica que dos pasadas dan predicciones idénticas. |
+| `referencias/Blanco-Fernandez_2024_articulo.pdf` | Copia del artículo de referencia (Blanco-Fernández et al., 2024). El notebook de auditoría cita su Cuadro 7 y su §5.2. |
 
 ## Los notebooks de modelado
 
