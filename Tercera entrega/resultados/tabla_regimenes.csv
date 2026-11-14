@@ -1,0 +1,5 @@
+modelo,parámetros entrenables,lr,F1-macro val,F1-macro prueba,MCC prueba,exactitud prueba,recall falsa,min por corrida,mejor época
+RoBERTa-BNE · congelado,"592,130",3.0e-04,0.9484 ± 0.0013,0.9374 ± 0.0077,0.8764 ± 0.0164,0.9376 ± 0.0077,0.9083 ± 0.0046,0.1,5.7
+RoBERTa-BNE · parcial,"14,767,874",1.5e-04,0.9793 ± 0.0046,0.9525 ± 0.0046,0.9053 ± 0.0094,0.9525 ± 0.0046,0.9648 ± 0.0095,1.1,4.3
+RoBERTa-BNE · completo,"124,644,866",2.0e-05,0.9712 ± 0.0038,0.9673 ± 0.0068,0.9346 ± 0.0136,0.9673 ± 0.0068,0.9648 ± 0.0053,3.3,3.7
+TF-IDF + SVM (Fase 2),"14,686 pesos",—,0.9513,0.9354,0.8710,0.9354,0.9450,< 0.1 (CPU),—

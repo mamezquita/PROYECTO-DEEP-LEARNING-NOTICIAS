@@ -1,0 +1,14 @@
+COMPARACIÓN DE REGÍMENES DE TRANSFERENCIA — RoBERTa-BNE, corpus colombiano (3.259)
+====================================================================================================
+Modelo: IsGarrido/roberta-base-bne @ 3d54a71ddc029cc1f8dd604e3b7bc0da0e2f7cd9
+Partición: la misma de la Fase 2 (train 2358 · val 452 · test 449), verificada fila por fila; 0 grupos con fuga.
+Protocolo común: ganador de la búsqueda bayesiana (lote 8, dropout 0.0726, wd 0.00855, ReduceLROnPlateau 0.33/1, parada 3).
+Tasa elegida por régimen en validación con semilla 16; evaluación con semillas [42, 2026, 7].
+
+congelado  ·     592,130 parámetros · lr 3.0e-04 · F1 val 0.9484 ± 0.0013 · F1 prueba 0.9374 ± 0.0077 · MCC prueba 0.8764 ± 0.0164 · 0.1 min/corrida
+parcial    ·  14,767,874 parámetros · lr 1.5e-04 · F1 val 0.9793 ± 0.0046 · F1 prueba 0.9525 ± 0.0046 · MCC prueba 0.9053 ± 0.0094 · 1.1 min/corrida
+completo   · 124,644,866 parámetros · lr 2.0e-05 · F1 val 0.9712 ± 0.0038 · F1 prueba 0.9673 ± 0.0068 · MCC prueba 0.9346 ± 0.0136 · 3.3 min/corrida
+TF-IDF+SVM · F1 prueba 0.9354 · MCC prueba 0.8710
+
+Régimen elegido en validación: parcial (mayor F1-macro medio en validación).
+Decisión congelada: 2026-11-14T17:29:59+00:00

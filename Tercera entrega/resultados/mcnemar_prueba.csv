@@ -1,0 +1,19 @@
+semilla,comparación,solo acierta A,solo acierta B,p McNemar
+42,congelado vs parcial,12,16,0.5715881884098053
+42,congelado vs completo,2,14,0.004180908203125
+42,parcial vs completo,3,11,0.057373046875
+42,congelado vs TF-IDF,19,16,0.735878800856881
+42,parcial vs TF-IDF,19,12,0.28104151505976915
+42,completo vs TF-IDF,20,5,0.004077315330505371
+2026,congelado vs parcial,7,20,0.0191572904586792
+2026,congelado vs completo,2,16,0.001312255859375
+2026,parcial vs completo,6,7,1.0
+2026,congelado vs TF-IDF,19,22,0.755228657504631
+2026,parcial vs TF-IDF,20,10,0.09873714670538905
+2026,completo vs TF-IDF,20,9,0.06142834573984146
+7,congelado vs parcial,10,13,0.6776394844055176
+7,congelado vs completo,3,17,0.0025768280029296875
+7,parcial vs completo,4,15,0.0192108154296875
+7,congelado vs TF-IDF,20,17,0.7428293587290682
+7,parcial vs TF-IDF,18,12,0.36159460805356514
+7,completo vs TF-IDF,22,5,0.0015137195587158203
