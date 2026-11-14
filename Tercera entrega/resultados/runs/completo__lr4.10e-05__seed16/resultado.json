@@ -1,0 +1,38 @@
+{
+  "regimen": "completo",
+  "lr": 4.0983871094082436e-05,
+  "seed": 16,
+  "capas_abiertas": 12,
+  "parametros_entrenables": 124644866,
+  "parametros_totales": 124644866,
+  "epocas_corridas": 6,
+  "mejor_epoca": 3,
+  "minutos": 2.9460779388745624,
+  "pasos": 1770,
+  "segundos_por_paso": 0.10079411019039693,
+  "val": {
+    "accuracy": 0.8893805309734514,
+    "f1_macro": 0.8893263599145952,
+    "mcc": 0.7786527198291904,
+    "precision_falsa": 0.8868778280542986,
+    "recall_falsa": 0.8868778280542986,
+    "precision_real": 0.8917748917748918,
+    "recall_real": 0.8917748917748918
+  },
+  "test": {
+    "accuracy": 0.8819599109131403,
+    "f1_macro": 0.8819599109131403,
+    "mcc": 0.765399737876802,
+    "precision_falsa": 0.8571428571428571,
+    "recall_falsa": 0.908256880733945,
+    "precision_real": 0.908256880733945,
+    "recall_real": 0.8571428571428571
+  },
+  "modelo": "IsGarrido/roberta-base-bne",
+  "revision": "3d54a71ddc029cc1f8dd604e3b7bc0da0e2f7cd9",
+  "amp": true,
+  "fecha": "2026-11-14T17:10:16+00:00",
+  "torch": "2.14.1+cu130",
+  "transformers": "5.22.1",
+  "gpu": "Tesla T4"
+}

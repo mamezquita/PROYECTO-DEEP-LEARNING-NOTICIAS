@@ -48,6 +48,7 @@ artículo no explicita:
 | `auditoria_construccion_corpus.ipynb` | **Notebook de auditoría**: todo el código que se usó para ampliar el corpus de 793 a 3.259 filas, en el orden en que se ejecutó. No entrena ningún modelo — es un registro reproducible de cómo se construyeron los datos. |
 | `finetuning_bayesiano_colombia.ipynb` | Ajuste fino de RoBERTa-BNE sobre el corpus colombiano, reemplazando el ajuste manual de hiperparámetros del artículo por una búsqueda bayesiana con Keras Tuner. Pensado para correrse de punta a punta en Colab con GPU. Ver detalle abajo. |
 | `auditoria_interpretabilidad_modelo.ipynb` | **Auditoría e interpretación del modelo final** (no entrena). Entrada única: la carpeta con `tf_model.h5` (`salida_bayesiana/mejor_modelo/`). Tres secciones: (1) auditoría temporal (fechas anacrónicas, funcionarios posteriores al corte), (2) qué aprendió como "falso" (otras fuentes, cifras absurdas, cargos incoherentes, sátira vs. hechos reales extravagantes, mapas de atención), (3) comparación con el Cuadro 7 del artículo. Raspa sus datos dentro del notebook desde un manifiesto fijo de URLs con huellas y guarda una instantánea, y verifica que dos pasadas dan predicciones idénticas. |
+| `Tercera entrega/` | **Fase 3: régimen de transferencia.** Cuaderno `comparacion_regimenes_transferencia.ipynb` (cuerpo congelado vs. 2 capas abiertas vs. ajuste fino completo, 3 semillas, sobre la misma partición de la Fase 2, más una curva de aprendizaje de 300 a 2.358 noticias), la partición fija `particion_fase2.csv`, el informe `informe_transferencia_fase3.pdf` y todos los resultados en `resultados/`. Ver la sección "Fase 3" abajo. |
 | `referencias/Blanco-Fernandez_2024_articulo.pdf` | Copia del artículo de referencia (Blanco-Fernández et al., 2024). El notebook de auditoría cita su Cuadro 7 y su §5.2. |
 
 ## Los notebooks de modelado
@@ -223,6 +224,33 @@ entregarlo** — a diferencia de los notebooks en PyTorch, que sí se
 pudieron probar parcialmente. La prueba de humo (§12) existe justamente
 para que un error de integración se note en menos de un minuto al
 correrlo en Colab, no después de una búsqueda de una hora.
+
+## Fase 3: ¿tamaño del corpus o receta de entrenamiento?
+
+En la Fase 1 se planteó que el colapso de RoBERTa-BNE con 633 noticias se debía a que no hay
+señal suficiente para ajustar 125 millones de parámetros. La carpeta `Tercera entrega/` lo
+pone a prueba comparando tres regímenes de transferencia con la misma partición, el mismo
+protocolo y una regla de selección fijada antes de entrenar.
+
+| Régimen | Parámetros entrenables | F1-macro prueba (2.358 noticias) | F1-macro prueba (300 noticias) |
+|---|---:|---:|---:|
+| Congelado (solo la cabeza) | 592.130 | 0,937 ± 0,008 | 0,897 ± 0,011 |
+| Parcial (2 últimas capas) | 14.767.874 | 0,953 ± 0,005 | 0,920 ± 0,019 |
+| Completo | 124.644.866 | 0,967 ± 0,007 | 0,930 ± 0,013 |
+| TF-IDF + SVM | — | 0,935 | 0,871 ± 0,006 |
+
+Media ± desviación de tres semillas (42, 2026 y 7). Ninguna de las 39 corridas de la curva de
+aprendizaje colapsó; el ajuste completo superó al congelado en todos los tamaños. El colapso de
+la Fase 1 se explica por la receta (tasa baja, lote 16 y una parada temprana que cortó el
+entrenamiento mientras la pérdida seguía en ln 2), no por el tamaño del corpus. El detalle, las
+pruebas de McNemar y las limitaciones están en `informe_transferencia_fase3.pdf`.
+
+**Advertencia de reproducibilidad.** La partición de la Fase 2 sale de `StratifiedGroupKFold`
+y **cambia con la versión de scikit-learn**: con la 1.6.1 (la de la Fase 2) se obtiene
+2.358 / 452 / 449; con versiones recientes, otra. Por eso la partición quedó guardada en
+`Tercera entrega/particion_fase2.csv` y el cuaderno de la Fase 3 la trae incrustada y la
+verifica fila por fila. Volver a ejecutar hoy los cuadernos de la Fase 2 en Colab no
+reproduciría sus números exactos.
 
 ## El dataset original (793 filas heredadas)
 
