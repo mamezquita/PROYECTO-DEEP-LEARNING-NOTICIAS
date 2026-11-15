@@ -1,0 +1,37 @@
+{
+  "regimen_elegido": "parcial",
+  "lr": 0.00015,
+  "motivo": "mayor F1-macro medio en validación",
+  "regla": "mayor F1-macro medio en validación; empate si la diferencia < mayor desviación → el más barato",
+  "validacion": [
+    {
+      "regimen": "parcial",
+      "val_f1_media": 0.979346,
+      "val_f1_sd": 0.004607,
+      "val_mcc_media": 0.958852,
+      "val_mcc_sd": 0.009255,
+      "parametros": 14767874,
+      "semillas": 3
+    },
+    {
+      "regimen": "completo",
+      "val_f1_media": 0.971207,
+      "val_f1_sd": 0.003836,
+      "val_mcc_media": 0.942659,
+      "val_mcc_sd": 0.007679,
+      "parametros": 124644866,
+      "semillas": 3
+    },
+    {
+      "regimen": "congelado",
+      "val_f1_media": 0.94836,
+      "val_f1_sd": 0.001285,
+      "val_mcc_media": 0.896801,
+      "val_mcc_sd": 0.002642,
+      "parametros": 592130,
+      "semillas": 3
+    }
+  ],
+  "huella_validacion": "93f01e7f3456aabe1282aebaa25883b3435c92b192ec43f829b6e1930d3f0c2a",
+  "fecha_decision": "2026-11-14T17:29:59+00:00"
+}

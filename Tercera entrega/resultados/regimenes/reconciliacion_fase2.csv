@@ -1,0 +1,5 @@
+origen,test_accuracy,test_f1_macro,test_mcc
+"Fase 2 · salida_bayesiana/ (22-sep, Keras)",0.951,0.951,0.9026
+"Fase 2 · finetuning_bayesiano_colombia.ipynb (raíz, Keras)",0.9644,0.9643,0.9287
+"Fase 2 · Segunda entrega/…EJECUTADO3259 (5-oct, Keras)",0.9688,0.9688,0.9377
+"Fase 3 · este cuaderno (PyTorch, semilla 16)",0.8819599109131403,0.8819599109131403,0.765399737876802

@@ -1,0 +1,32 @@
+                      modelo  n_train  val_f1  val_sd  test_f1  test_sd  test_mcc no_despego  loss_epoca1  semillas
+                   congelado      300  0.9180  0.0232   0.8974   0.0112    0.7953        0/3       0.6652         3
+                     parcial      300  0.9335  0.0301   0.9202   0.0186    0.8435        0/3       0.5368         3
+                    completo      300  0.9356  0.0174   0.9300   0.0129    0.8618        0/3       0.6984         3
+                TF-IDF + SVM      300  0.8731  0.0068   0.8708   0.0059    0.7439          —          NaN         3
+                   congelado      633  0.9336  0.0059   0.9042   0.0112    0.8087        0/3       0.5962         3
+                     parcial      633  0.9550  0.0068   0.9428   0.0084    0.8860        0/3       0.4237         3
+                    completo      633  0.9490  0.0119   0.9383   0.0052    0.8777        0/3       0.6922         3
+completo (lr 1e-05, control)      633  0.8895  0.0500   0.8850   0.0435    0.7783        0/3       0.6925         3
+                TF-IDF + SVM      633  0.9218  0.0128   0.9013   0.0046    0.8035          —          NaN         3
+                   congelado     1200  0.9484  0.0092   0.9205   0.0109    0.8417        0/3       0.5050         3
+                     parcial     1200  0.9675  0.0114   0.9458   0.0068    0.8917        0/3       0.3039         3
+                    completo     1200  0.9638  0.0046   0.9569   0.0064    0.9145        0/3       0.6578         3
+                TF-IDF + SVM     1200  0.9351  0.0092   0.9183   0.0052    0.8370          —          NaN         3
+                   congelado     2358  0.9484  0.0013   0.9374   0.0077    0.8764        0/3       0.3994         3
+                     parcial     2358  0.9793  0.0046   0.9525   0.0046    0.9053        0/3       0.2476         3
+                    completo     2358  0.9712  0.0038   0.9673   0.0068    0.9346        0/3       0.5123         3
+                TF-IDF + SVM     2358  0.9513  0.0000   0.9354   0.0000    0.8710          —          NaN         3
+
+ n_train           comparación  semillas_gana_A  semillas_significativas  dif_media_aciertos
+     300 completo vs congelado                3                        2                14.7
+     300   completo vs parcial                2                        0                 4.3
+     300  parcial vs congelado                3                        1                10.3
+     633 completo vs congelado                3                        2                15.3
+     633   completo vs parcial                1                        0                -2.0
+     633  parcial vs congelado                3                        2                17.3
+    1200 completo vs congelado                3                        2                16.3
+    1200   completo vs parcial                2                        0                 5.0
+    1200  parcial vs congelado                3                        1                11.3
+    2358 completo vs congelado                3                        3                13.3
+    2358   completo vs parcial                3                        1                 6.7
+    2358  parcial vs congelado                3                        1                 6.7
