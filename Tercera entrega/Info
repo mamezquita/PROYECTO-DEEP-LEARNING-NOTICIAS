@@ -1,5 +1,6 @@
-#En esta carpeta están los archivos de la entrega #3: comparación de regímenes de transferencia de RoBERTa-BNE.
+#En esta carpeta están los archivos de la entrega #3. El detalle completo está en README.md.
 #1- comparacion_regimenes_transferencia.ipynb: cuaderno ejecutado en Colab (GPU T4). Compara cuerpo congelado, 2 capas abiertas y ajuste fino completo sobre la misma partición de la Fase 2, con 3 semillas, y agrega una curva de aprendizaje (300, 633, 1.200 y 2.358 noticias).
-#2- particion_fase2.csv: la partición train/val/test de la Fase 2 por id de noticia. Se guarda porque recalcularla con otra versión de scikit-learn da otra partición.
-#3- informe_transferencia_fase3.pdf: informe con los hallazgos.
-#4- resultados/: tablas, figuras, decisión preregistrada (seleccion_regimen.json), pruebas de McNemar, historial por época y predicciones de cada corrida (runs/) y resultados de la curva de aprendizaje (curva_aprendizaje/).
+#2- auditoria_interpretabilidad_modelo.ipynb: auditoría del modelo de la Fase 2 (no entrena): si usa las fechas y qué aprendió como "falso".
+#3- informe_transferencia_fase3.pdf: informe con los hallazgos de la comparación de regímenes.
+#4- particion_fase2.csv: la partición train/val/test de la Fase 2 por id de noticia. Se guarda porque recalcularla con otra versión de scikit-learn da otra partición.
+#5- resultados/: regimenes/ (tablas, decisión preregistrada, McNemar), curva_aprendizaje/ (resúmenes de la curva), figuras/ y corridas/ (historial por época y predicciones de cada corrida).
